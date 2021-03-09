@@ -1,0 +1,122 @@
+html {
+  background-color: $viewport-background-color;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding-top: 120px;
+  @media screen and ($tablet) {
+    padding-top: 64px;
+  }
+}
+
+.layout {
+  position: relative;
+  padding: 8em 0;
+  @media screen and ($tablet) {
+    padding: 5em 0;
+  }
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 30px;
+  @media screen and ($tablet) {
+      padding: 0 45px;
+  }
+}
+
+.align-left,
+.text-align-left {
+  text-align: left;
+}
+.align-center,
+.text-align-center {
+  text-align: center;
+}
+.align-right,
+.text-align-right {
+  text-align: right;
+}
+
+.bg-orange {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: -100px;
+  padding: 0;
+  color: $white;
+  filter: drop-shadow(0 48px 30px rgba(37,73,187,0.5));
+  transform: translate3d(0,0,0);
+  .curve-wrap {
+    clip-path: ellipse(100% 55% at 50% 44%);
+    background-color: $orange;
+    background: linear-gradient(138deg,#e2571b 0,#ff9413 100%);
+    background-position: center;
+    background-size: 200% 200%;
+    @media screen and ($tablet) {
+      clip-path: ellipse(130% 55% at 50% 44%);
+    }
+  }
+}
+
+.bg-blue {
+  color: $white;
+  background-color: $blue;
+  padding-top: calc(8em + 100px);
+  padding-bottom: calc(8em + 100px);
+  @media screen and ($tablet) {
+    padding-top: calc(5em + 100px);
+    padding-bottom: calc(3em + 100px);
+  }
+}
+
+.bg-white {
+  color: black;
+  background-color: $white;
+  filter: drop-shadow(0 -48px 30px rgba(37,73,187,0.5));
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 600px;
+    background: $white;
+    clip-path: ellipse(100% 55% at 50% 64%);
+    @media screen and ($tablet) {
+      clip-path: ellipse(130% 55% at 50% 64%);
+    }
+  }
+  .intro,
+  .wrapper {
+    position: relative;
+  }
+}
+
+.bg-purple {
+  color: $white;
+  background-color: $purple;
+  background: linear-gradient(144.22deg, $purple 0%, $blue 100%);
+  background-position: center;
+  background-size: 200% 200%;
+  a {
+    color: $white;
+  }
+  .home & {
+    box-shadow: inset 0 70px 58px -30px rgba(121,42,201,0.8);
+  }
+}

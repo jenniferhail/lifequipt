@@ -1,0 +1,86 @@
+<footer class="footer bg-purple">
+
+    <section id="contact" class="layout basic-content">
+        <div class="component intro">
+            <div class="wrapper">
+                <h2 class="title large h1">Connect with us.</h2>
+            </div>
+        </div>
+        <div class="wrapper">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+                <input type=hidden name='captcha_settings' value='{"keyname":"Lifequipt","fallback":"true","orgId":"00D3h0000018EZ9","ts":""}'>
+                <input type=hidden name="oid" value="00D3h0000018EZ9">
+                <input type=hidden name="retURL" value="https://staging.lifequipt.com/thank-you">
+                
+                <!--  ----------------------------------------------------------------------  -->
+                <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                <!--  these lines if you wish to test in debug mode.                          -->
+                <!--  <input type="hidden" name="debug" value=1>                              -->
+                <!--  <input type="hidden" name="debugEmail" value="lifequipt@10kview.com">   -->
+                <!--  ----------------------------------------------------------------------  -->
+                
+                <div class="field one-half left">
+                    <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                </div>
+                <div class="field one-half right">
+                    <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+                </div>
+                <div class="field one-half left">
+                    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" />
+                </div>
+                <div class="field one-half right">
+                    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" />
+                </div>
+                <div class="field">
+                    <label for="description">Description</label><textarea name="description"></textarea>
+                </div>
+                <div class="field select">
+                    <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source">
+                    <option value="Web">Web</option>
+                    </select>
+                    <div class="arrow"></div>
+                </div>
+                <div class="field recaptcha">
+                    <div class="g-recaptcha" data-sitekey="6LfLkvQUAAAAAGzCcUM12ZGnzWZ-STLWSf5-gRrw"></div>
+                </div>
+                <div class="field submit">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <span>Lifequipt℠ © 2020</span>
+    </div>
+    
+    <section class="layout accordion list" style="padding: 2em;">
+        <div class="wrapper">
+            <div class="acc-list">
+                <div id="acc-item-1" class="acc-item">
+                    <div class="title">
+                        <h2>Sources</h2>
+                    </div>
+                    <div class="content text-align-center">
+                        <p><a href="/" target="_blank">Pew Research Center</a></p>
+                        <p><a href="/" target="_blank">CDC Fatal Injury Reports</a></p>
+                        <p><a href="/" target="_blank">Wiley Online Library</a></p>
+                        <p><a href="/" target="_blank">CDC Morbidity and Mortality Weekly Report</a></p>
+                        <p><a href="/" target="_blank">Integrated Benefits Institute</a></p>
+                        <p><a href="/" target="_blank">Global Wellness Institute</a></p>
+                        <p><a href="/" target="_blank">The Social Care Network</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</footer>
+
+<!-- development version of vue.js, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="assets/js/bundle.js"></script>
+</body>
+
+</html>

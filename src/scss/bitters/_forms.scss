@@ -1,0 +1,332 @@
+$_form-background-color: #fff;
+$_form-box-shadow: 7px 2px 53px 7px rgba(58,32,200,0.76);
+// $_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba($action-color, 0.7);
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label,
+body .nf-form-content label,
+body .nf-field-label label {
+  position: relative;
+  display: block;
+  margin-bottom: $small-spacing / 2;
+  padding-left: 10px;
+  font-size: 27px;
+  font-weight: 600;
+  z-index: 1;
+  @media screen and ($tablet) {
+    font-size: 16px;
+  }
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: 16px;
+}
+
+#{$all-text-inputs} {
+  width: 100%;
+  margin-bottom: $small-spacing;
+  padding: 20px;
+  appearance: none;
+  color: $base-font-color;
+  background-color: $_form-background-color;
+  border: $base-border;
+  border-radius: 10px;
+  box-shadow: $_form-box-shadow;
+  box-sizing: border-box;
+  transition: border-color $base-duration $base-timing;
+
+  @media screen and ($tablet) {
+    padding: 12px 15px;
+  }
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    // box-shadow: $_form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($_form-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+[type="submit"] {
+  height: 58px;
+  width: 189px;
+  max-width: 100%;
+  padding: 10px;
+  color: $purple;
+  text-align: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  background-color: $white;
+  background-image: linear-gradient(142.32deg, #fff, #fff, #9438F1, #5980FA);
+  background-size: 300% 100%;
+  box-shadow: $_form-box-shadow;
+  @media screen and ($tablet) {
+    height: 36px;
+    width: 130px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  &:hover {
+    background-position: 100% 0;
+    color: $white;
+  }
+}
+
+select {
+  width: 100%;
+  height: 61px;
+  margin-bottom: $small-spacing;
+  padding: 20px;
+  appearance: none;
+  color: $base-font-color;
+  background-image: linear-gradient(45deg, $white, $white);
+  border: $base-border;
+  border-radius: 10px;
+  box-shadow: $_form-box-shadow;
+  box-sizing: border-box;
+  transition: border-color $base-duration $base-timing;
+  @media screen and ($tablet) {
+    height: 45px;
+    padding: 12px 15px;
+  }
+}
+// IE - Hide the default arrow, so we can show the pretty one
+select::ms-expand {
+  display: none;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select {
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+}
+
+form .field {
+  margin-bottom: 25px;
+  &.one-half {
+    @media screen and (min-width: 769px) {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(50% - 2px);
+      float: none;
+    }
+  }
+  &.one-half.left {
+    @media screen and (min-width: 769px) {
+      padding-right: 25px;
+    }
+  }
+  &.one-half.right {
+    @media screen and (min-width: 769px) {
+      padding-left: 25px;
+    }
+  }
+  &.select {
+    position: relative;
+    &:after {
+      font-family: FontAwesome;
+      content: '\f107';
+      font-size: 28px;
+      position: absolute;
+      top: 32px;
+      right: 15px;
+      color: $blue;
+      pointer-events: none;
+      @media screen and (min-width: 769px) {
+        top: 60px;
+        right: 20px;
+        font-size: 32px;
+      }
+    }
+  }
+  &.recaptcha {
+    padding-top: 15px;
+  }
+  &.submit {
+    text-align: right;
+  }
+}
+
+// Gravity Forms 
+body .gform_wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  .gform_body {
+    margin-bottom: 60px;
+  }
+  .gform_footer {
+    text-align: right;
+  }
+  .gfield {
+    margin-bottom: 30px;
+  }
+}
+
+// Ninja Forms
+body {
+  .nf-before-form-content {
+    display: none;
+  }
+  .nf-before-form-content,
+  .nf-after-form-content {
+    text-align: center;
+  }
+  .nf-table-display tr {
+    border: none;
+  }
+  .nf-error-msg, 
+  .ninja-forms-req-symbol {
+    color: $white;
+    font-weight: 400;
+  }
+  .nf-error .nf-error-msg {
+    position: relative;
+    top: -8px;
+    color: $white;
+  }
+  .nf-form-content .list-select-wrap .nf-field-element>div, 
+  .nf-form-content input:not([type=button]), 
+  .nf-form-content textarea {
+    width: 100%;
+    height: auto;
+    margin-bottom: $small-spacing;
+    padding: 20px;
+    appearance: none;
+    color: $base-font-color;
+    background-color: $_form-background-color;
+    border: $base-border;
+    border-radius: 10px;
+    box-shadow: $_form-box-shadow;
+    box-sizing: border-box;
+    transition: border-color $base-duration $base-timing;
+
+    @media screen and ($tablet) {
+      padding: 12px 15px;
+    }
+
+    &:hover {
+      border-color: shade($base-border-color, 20%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: shade($_form-background-color, 5%);
+      cursor: not-allowed;
+
+      &:hover {
+        border: $base-border;
+      }
+    }
+
+    &::placeholder {
+      color: tint($base-font-color, 40%);
+    }
+  }
+  .submit-container {
+    padding-top: 25px;
+    text-align: right;
+  }
+  .nf-form-content button, 
+  .nf-form-content input[type=button], 
+  .nf-form-content input[type=submit] {
+    height: 58px;
+    width: 189px;
+    max-width: 100%;
+    padding: 10px;
+    color: $purple;
+    text-align: center;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    background-color: $white;
+    background-image: linear-gradient(142.32deg, #fff, #fff, #9438F1, #5980FA);
+    background-size: 300% 100%;
+    box-shadow: $_form-box-shadow;
+    @media screen and ($tablet) {
+      height: 36px;
+      width: 130px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    &:hover {
+      color: $white;
+      background-image: linear-gradient(142.32deg, #fff, #fff, #9438F1, #5980FA);
+      background-size: 300% 100%;
+      background-position: 100% 0;
+    }
+  }
+  .nf-error .ninja-forms-field {
+    border-color: $orange !important;
+  }
+  .nf-error.field-wrap .nf-field-element:after {
+    color: $orange;
+    background: transparent;
+    line-height: 61px;
+    @media screen and ($tablet) {
+      height: 45px;
+      line-height: 45px;
+    }
+  }
+  .nf-after-field .nf-error-msg {
+    @media screen and ($tablet) {
+      margin-bottom: 15px;
+    }
+  }
+}
